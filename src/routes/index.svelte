@@ -1,0 +1,15 @@
+<script>
+	import TodoForm from "../components/TodoForm.svelte";
+	import Todo from "../components/Todo.svelte";
+	import { todos } from "../stores/todoStore";
+</script>
+
+<main>
+	<h1 class="text-center text-2xl font-bold text-gray-800 md:text-3xl">Todos 📖</h1>
+
+	<TodoForm />
+
+	{#each $todos as todo}
+		<Todo {todo} index={todo.id} />
+	{/each}
+</main>
